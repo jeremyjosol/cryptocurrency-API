@@ -3,15 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Cryptocurrency from './crypto.js'
 
-function getCrypto(currency) {
-  Cryptocurrency.getCrypto(currency)
-    .then(function(response) {
-      if (response) {
-        outputCrypto(response);
-      } else {
-        outputError(response);
-      }
-    });
+async function getCrypto(currency) { // 
+  const response = await Cryptocurrency.getCrypto(currency);
+  if (response) {
+    outputCrypto(response);
+  } else {
+    outputError(response);
+  }
 }
 
 // UI Logic
@@ -31,13 +29,12 @@ function outputCrypto(response) {
   for (let i = 0; i < currentPrice.length; i ++) {
     const cryptoCurrency = currentPrice[i];
     const price = response.market_data.current_price[cryptoCurrency];
-   
     document.querySelector('#showResponse').innerHTML += `<span class="price">${cryptoCurrency.toUpperCase()}: ${price}</span> <br />`
   }
 }
 
 function outputError(error) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for
+  document.querySelector('#showResponse').innerText = `There was an error accessing the Cryptocurrency data for
   ${error}.`;
 }
 
