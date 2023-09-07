@@ -43,8 +43,8 @@ function outputError(error) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const currency = document.querySelector('#location').value;
-  document.querySelector('#location').value = null;
+  const currency = document.querySelector('#crypto').value;
+  document.querySelector('#crypto').value = null;
   getCrypto(currency);
 }
 
