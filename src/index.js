@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Cryptocurrency from './crypto.js'
+import Cryptocurrency from './crypto.js';
 
 async function getCrypto(currency) { // 
   const response = await Cryptocurrency.getCrypto(currency);
@@ -16,10 +16,10 @@ async function getCrypto(currency) { //
 
 function outputCrypto(response) {
   document.querySelector('#showImage').innerHTML = 
-  `<h2 class="name">${response.name} <img src=${response.image.thumb}></h2>`
+  `<h2 class="name">${response.name} <img src=${response.image.thumb}></h2>`;
 
   document.querySelector('#showUSD').innerHTML = 
-  `<h2 class="USD">USD: $${response.market_data.current_price.usd} <br />` 
+  `<h2 class="USD">USD: $${response.market_data.current_price.usd} <br />`;
   
   document.querySelector('#showResponse').innerHTML = 
   `<span class="description">${response.description.en}</span> <br /> <br /> <h2>Current Market Data Price:</h2>`;
@@ -29,7 +29,7 @@ function outputCrypto(response) {
   for (let i = 0; i < currentPrice.length; i ++) {
     const cryptoCurrency = currentPrice[i];
     const price = response.market_data.current_price[cryptoCurrency];
-    document.querySelector('#showResponse').innerHTML += `<span class="price">${cryptoCurrency.toUpperCase()}: ${price}</span> <br />`
+    document.querySelector('#showResponse').innerHTML += `<span class="price">${cryptoCurrency.toUpperCase()}: ${price}</span> <br />`;
   }
 }
 
