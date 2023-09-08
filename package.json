@@ -1,13 +1,19 @@
 {
-  "name": "name_of_file",
+  "name": "cryptocurrencyapi",
   "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/jeremyjosol/sep62023_cryptocurrencyapi.git"
+  },
+  "homepage": "http://jeremyjosol.github.io/sep62023_cryptocurrencyapi",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
     "start": "npm run build && webpack-dev-server --open --mode=development",
     "lint": "eslint src --ext .js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +34,7 @@
     "webpack-dev-server": "3.11.3"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "gh-pages": "^6.0.0"
   }
 }
