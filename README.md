@@ -4,7 +4,7 @@
 _Jeremy Josol_
 
 ## About
-This application uses the [CoinGecko API](https://www.coingecko.com/) to generate results based on the search query of a specific Cryptocurrency. The generated parameters include current USD, the Cryptocurrency's description, and a list of all countries current market data price. 
+This application utilizes the [CoinGecko API](https://www.coingecko.com/) to retrieve specific cryptocurrency information based on user queries. The resulting data includes the current USD value, a brief cryptocurrency description, and an overview of its market pricing across various countries.
 
 ## Technologies Used
 
